@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/dw.iml" filepath="$PROJECT_DIR$/dw.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BBDWorkWithSpringBoot.iml" filepath="$PROJECT_DIR$/BBDWorkWithSpringBoot.iml" />
     </modules>
   </component>
 </project>
