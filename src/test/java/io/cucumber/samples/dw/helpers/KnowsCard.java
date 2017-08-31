@@ -1,12 +1,12 @@
 package io.cucumber.samples.dw.helpers;
 
-import com.jayway.restassured.module.jsv.JsonSchemaValidator;
-import com.jayway.restassured.response.ValidatableResponse;
+import io.restassured.module.jsv.JsonSchemaValidator;
+import io.restassured.response.ValidatableResponse;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
-import static com.jayway.restassured.RestAssured.given;
+import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
 /**
@@ -19,14 +19,14 @@ public class KnowsCard extends KnowsHttp {
     private ValidatableResponse response = null;
 
     public void assertThatCardWithNumberHadBeenExisted(String cardNum) {
-        given().parameter("cardNum", cardNum).
+        given().param("cardNum", cardNum).
                 get("/card/count").
                 then().body("data", is(1));
 
     }
 
     public void assertThatRepliedCardDataIsNotNullOrEmpty(String cardNum) {
-        response = given().parameter("cardNum", cardNum).
+        response = given().param("cardNum", cardNum).
                 get("/card/query").
                 then().body("data", not(isEmptyOrNullString()));
     }
@@ -44,7 +44,7 @@ public class KnowsCard extends KnowsHttp {
     }
 
     public void assertThatCardWithNumberDoesNotExisted(String cardNum) {
-        given().parameter("cardNum", cardNum).
+        given().param("cardNum", cardNum).
                 get("/card/count").
                 then().body("data", is(0));
     }

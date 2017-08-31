@@ -19,8 +19,9 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.7</java.version>
         <junit.version>4.12</junit.version>
-        <cucumber.version>1.2.2</cucumber.version>
+        <cucumber.version>1.2.4</cucumber.version>
         <maven.compiler.version>3.3</maven.compiler.version>
+        <rest.arrured.version>3.0.3</rest.arrured.version>
     </properties>
 
     <dependencies>
@@ -102,9 +103,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.jayway.restassured</groupId>
+            <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
-            <version>2.9.0</version>
+            <version>${rest.arrured.version}</version>
             <scope>test</scope>
             <exclusions>
                 <exclusion>
@@ -115,9 +116,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.jayway.restassured</groupId>
+            <groupId>io.rest-assured</groupId>
             <artifactId>json-schema-validator</artifactId>
-            <version>2.9.0</version>
+            <version>${rest.arrured.version}</version>
             <scope>test</scope>
             <exclusions>
                 <exclusion>
