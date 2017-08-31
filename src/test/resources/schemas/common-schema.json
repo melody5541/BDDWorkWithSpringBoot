@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "通用交互数据格式验证Schema",
+  "definitions": {
+    "cardNum": {
+      "type": "string",
+      "minLength": 8,
+      "maxLength": 8,
+      "pattern": "[C|S](0*)\\d+"
+    },
+    "errName": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "errMsg": {
+      "type": "string",
+      "minLength": 1
+    },
+    "errCode": {
+      "type": "integer",
+      "maximum": 0
+    }
+  },
+  "type": "object",
+  "properties": {
+    "errName": {
+      "$ref": "#/definitions/errName"
+    },
+    "errMsg": {
+      "$ref": "#/definitions/errMsg"
+    },
+    "errCode": {
+      "$ref": "#/definitions/errCode"
+    }
+  },
+  "required": ["errName","errMsg","errCode"],
+  "additionalProperties": true
+}

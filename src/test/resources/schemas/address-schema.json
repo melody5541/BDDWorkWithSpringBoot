@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "账单地址数据格式验证Schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "cardNum": {
+        "$ref": "common-schema.json#/definitions/cardNum"
+      },
+      "region": {
+        "type": "string",
+        "minLength": 1,
+        "enum": [
+          "AP",
+          "EU"
+        ]
+      },
+      "country": {
+        "type": "string",
+        "minLength": 1,
+        "enum": [
+          "CN",
+          "ES"
+        ]
+      },
+      "state": {
+        "type": "string",
+        "minLength": 1
+      },
+      "city": {
+        "type": "string",
+        "minLength": 1
+      },
+      "street": {
+        "type": "string",
+        "minLength": 1
+      },
+      "extDetail": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "required": [
+      "id",
+      "cardNum",
+      "region",
+      "country",
+      "state",
+      "city",
+      "street",
+      "extDetail"
+    ],
+    "additionalProperties": false
+  },
+  "maxItems": 2,
+  "minItems": 1
+}

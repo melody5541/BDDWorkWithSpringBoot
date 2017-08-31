@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "银行卡数据格式验证Schema",
+  "definitions": {
+    "eleInnerData": {
+      "properties": {
+        "id": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "cardNum": {
+          "$ref":"common-schema.json#/definitions/cardNum"
+        },
+        "cardOwnerName": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 128
+        },
+        "cardType": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1,
+          "enum": [
+            "0",
+            "1"
+          ]
+        },
+        "cardSeqNum": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 127
+        },
+        "starPoints": {
+          "type": "number",
+          "minimum": 0.00
+        },
+        "cardBillingAddressList": {
+          "$ref": "address-schema.json"
+        },
+        "primaryCard": {
+          "type": "boolean",
+          "enum": [
+            true,
+            false
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "cardNum",
+        "cardOwnerName",
+        "cardType",
+        "cardSeqNum",
+        "starPoints",
+        "cardBillingAddressList",
+        "primaryCard"
+      ],
+      "additionalProperties": false
+    },
+    "eleData": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/eleInnerData"
+      },
+      "minItems": 0
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "common-schema.json"
+    },
+    {
+      "type": "object",
+      "properties": {
+        "data": {
+          "$ref": "#/definitions/eleData"
+        }
+      },
+      "required": [
+        "data"
+      ],
+      "additionalProperties": true
+    }
+  ]
+}

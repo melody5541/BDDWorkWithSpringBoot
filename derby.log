@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Fri Sep 01 00:09:02 CST 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-015e-390d-8b5d-000006ee9178 
+on database directory memory:/Users/GooodBoy/IdeaProjects/dw/cucumber with class loader java.net.URLClassLoader@54328834 
+Loaded from file:/Users/GooodBoy/.m2/repository/org/apache/derby/derby/10.12.1.1/derby-10.12.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_60-b27
+user.dir=/Users/GooodBoy/IdeaProjects/dw
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.12.6
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
